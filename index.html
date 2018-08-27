@@ -12,6 +12,19 @@
           background-color: rgb(200,200,255);
           border: 2px solid rgb(50,50,100);
         }
+section h2 {
+  color: #999
+  font-size: 12pt;
+  text-transform: uppercase
+  text-align: left;
+}
+#target-date {
+  border: 3px solid rgb(94,3,5);
+}
+.data-big, .label {
+  font-size: 20pt;
+}
+
     </style>
     <title>Project Dashboard</title>
 </head>
@@ -23,9 +36,15 @@
         <div class="col placeholder">
           Completion %
         </div>
-        <div class="col placeholder">
-          Due Date | days remaining
-        </div>
+
+          <section id="target-date" class="col placeholder">
+            <h2> Target Date</h2>
+            <span class="label">Days:</span>
+            <span class="data-big time-long">17</span>
+            <span class="data-big">d/m/yy</span>
+
+          </section>
+
         <div class="col placeholder">
           Status
         </div>
