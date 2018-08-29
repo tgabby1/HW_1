@@ -1,0 +1,27 @@
+/* !#--legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+} */
+
+h1 {
+	color: rgb(255,0,255);
+}
+
+body {
+    background-color: rgb(255,204,255);
+}
+
+a {
+  color: rgb(229,204,227)
+}
+
+link {
+  color: rgb(32,32,32);
+}
