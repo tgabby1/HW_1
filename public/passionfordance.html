@@ -56,7 +56,7 @@
         <p class="lead">
           <a href="https://www.wheretraveler.com/sites/default/files/styles/wt17_promoted_large/public/ball_chain_mj_tribute_gil_bitton.jpg?itok=R3bEArPP&timestamp=1489167548"><img src="img/dancing_couple.jpg" alt="Man and woman salsa dancing in front of a crowd" class="img-thumbnail"></a><br />
           <h2>Upcoming Dance Events</h2>
-          <table class="table table-bordered">
+          <table id="eventTable" class="table table-bordered">
         <thead>
           <tr>
             <th scope="col">Dance Type</th>
@@ -125,5 +125,9 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="js/tablesort.min.js"></script>
+    <script>
+  new Tablesort(document.getElementById('eventTable'));
+</script>
   </body>
 </html>
