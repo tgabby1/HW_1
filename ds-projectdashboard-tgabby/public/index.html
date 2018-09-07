@@ -69,8 +69,7 @@ section h2 {
       <div class="row">
         <table id="tasksTable" class="table table-striped table-sm">
           <thead>
-            <tr>
-              <th>
+            <tr><th>
                 Task
               </th>
               <th>
@@ -81,27 +80,10 @@ section h2 {
               </th>
             </tr>
             <tbody>
-            <tr>
-              <td>
-                Create a dashboard
-              </td>
-              <td>
-                L
-              </td>
-            <td>
-            Dancing Foxes
-            </td>
-            </tr>
-            <tr>
-              <td>
-                Build Charts
-              </td>
-              <td>
-                M
-              </td>
-            <td>
-            Walled Terrapins
-            </td>
+            <tr v-for="task in tasks">
+              <td>{{ task.title}}</td>
+              <td>{{ task.size}}</td>
+            <td>{{task.team}}</td>
             </tr>
             </tbody>
           </thead>
