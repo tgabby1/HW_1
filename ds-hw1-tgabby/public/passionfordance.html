@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="static/flamenca.ico">
+
+    <title>Juanita Chavez</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="js/custom.js">
+
+    <!-- Custom styles for this template -->
+  <!--<link href="starter-template.css" rel="stylesheet"> -->
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href=./index.html>Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./aboutme.html">About Me </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./interests.html">A Passion for Dance <span class="sr-only">(current)</span></a>
+          </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h1>A Passion for Dance</h1>
+        <p>
+          Juanita has been dancing since the age of 4, when she first joined in the dancing at family gatherings growing up. Now a seasoned dance instructor and performer, Juanita owns her own dance studio. She offers a multitude of classes and dance nights throughout the month.
+        </p>
+        <p class="lead">
+          <a href="https://www.wheretraveler.com/sites/default/files/styles/wt17_promoted_large/public/ball_chain_mj_tribute_gil_bitton.jpg?itok=R3bEArPP&timestamp=1489167548"><img src="img/dancing_couple.jpg" alt="Man and woman salsa dancing in front of a crowd" class="img-thumbnail"></a><br />
+          <h2>Upcoming Dance Events</h2>
+          <table id="eventTable" class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Dance Type</th>
+            <th scope="col">Upcoming Event</th>
+            <th scope="col">Date</th>
+            <th scope="col">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Salsa</td>
+            <td>Bailamos! A Night of Salsa and other Latin Dances</td>
+            <td>08/31/18</td>
+            <td>$10</td>
+          </tr>
+          <tr>
+            <td>Ballroom</td>
+            <td>Intermediate Ballroom w/Eric Myers</td>
+            <td>09/01/18</td>
+            <td>$15</td>
+          </tr>
+          <tr>
+            <td>Swing</td>
+            <td>Chicago's Finest: West Coast Lesson and Dance Night</td>
+            <td>09/08/18</td>
+            <td>$15</td>
+          </tr>
+          <tr>
+            <td>Salsa</td>
+            <td>Bailamos! A Night of Salsa and other Latin Dances</td>
+            <td>09/14/18</td>
+            <td>$10</td>
+          </tr>
+          <tr>
+            <td>Ballroom</td>
+            <td>Intermediate Ballroom w/Eric Myers</td>
+            <td>09/21/18</td>
+            <td>$15</td>
+        </tbody>
+      </table>
+      <form onsubmit="addrow()">
+        Dance Type: <input type="text">
+        <input type="submit">
+      </form>
+      <form onsubmit="addrow()">
+        Event Name: <input type="text">
+        <input type="submit">
+      </form>
+      <form onsubmit="addrow()">
+        Date: <input type="text">
+        <input type="submit">
+      </form>
+      <form onsubmit="addrow()">
+        Cost: <input type="text">
+        <input type="submit">
+      </form>
+      </p>
+      </div>
+
+    </main><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/tablesort.min.js"></script>
+    <script>
+  new Tablesort(document.getElementById('eventTable'));
+</script>
+  </body>
+</html>
