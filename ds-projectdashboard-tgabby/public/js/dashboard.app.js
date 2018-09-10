@@ -66,11 +66,12 @@ data: {
 
 },
 computed: {
-  days_left: function() {return 31}
+  days_left: function() { return 31}
 },
 methods: {
   pretty_date : function(d) {
     return moment(d).format('l');
-  }
+  },
+
 }
 })
