@@ -12,12 +12,18 @@ class Work
   public function __construct($data) {
     //TODO
   }
+  public function __construct($row) {
+    $this->id = $row['id'];
 
-public static function findByTaskId($taskId) {
+    $this->start_date = $row['start_date'];
+    $this->end_date = $row['end_date'];
+}
+public static function findByTaskId(int $taskId) {
   //1. Get db connection
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
   var_dump($db);
 
+  return[];
   die;
   //2. Prepare Query
 

@@ -6,5 +6,5 @@ set_include_path(__DIR__);
 
 require 'environment.php';
 
-//Require class files 
+/** MODELS **/
 require 'models/Work.php';
