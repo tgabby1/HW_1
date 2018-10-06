@@ -13,7 +13,7 @@ class Work
     //TODO
   }
   public function __construct($row) {
-    $this->id = intval($row['id']);
+    $this->id = isset($row['id']) ? intval($row['id']) :null ;
 
     $this->task_id = intval($row['task_id'])
     $this->team_id = intval($row['team_id'])
@@ -28,8 +28,34 @@ class Work
 
     $date = new DateTime($this->start);
     $date = add(new DateInterval($interval));
-    $this
+    $this->stop = $date->fprmat('Y-m-d H:i:s');
+
+    $this->completion_estimate = intval($row['completion_estimate']);
 }
+
+public function create() {
+  $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+  $sql = 'INSERT INTO Work (task_id, team_id, start_date, hours, completion_estimate)'
+        VALUES(?,?,?,?,?)';'
+
+  $staement = $db->prepare($sql);
+
+  $success = $statement->execute([
+    $this->$task_id
+    $this->$team_id
+    $this->start,
+    $this->hours,
+    $this->completion_estimate
+  ]);
+
+  if (!$success) {
+    //TODO: Better error handling
+    die('SQL error');
+  }
+
+  $this->id = $db->lastInsertId();
+}
+
 public static function findByTaskId(int $taskId) {
   //1. Get db connection
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);

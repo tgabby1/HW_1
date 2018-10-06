@@ -1,6 +1,5 @@
-
 var dashboardApp = new Vue({
-el: "#dashboard",
+el: '#dashboard',
 data: {
   project: {
       name : '',
@@ -30,7 +29,7 @@ data: {
     },
 computed: {
   days_left: function() {
-    return moment(this.target_date).diff(moment(), 'days')
+    return moment(this.project.target_date).diff(moment(), 'days')
 },
   pretty_target_date: function() {
     return this.pretty_date(this.target_date)
@@ -49,7 +48,7 @@ methods: {
       return '$' + (val/1e3).toFixed(1) + 'k'
       }
 
-      return '$' + (val/1e3).toFixed(1) + 'M'
+      return '$' + (val/1e6).toFixed(1) + 'M'
     },
     completeClass: function(task) {
       if (task.perc_complete == 100) {
@@ -60,20 +59,20 @@ methods: {
       }
     },
     fetchTasks() {
-      fetch('https://raw.githubusercontent.com/tag/iu-msis/dev/public/p1-tasks.json')
-      .then( response => response.json() )
-      .then( json => {dashboardApp.tasks = json})
-      .catch( function(err) {
-    console.log('TASK FETCH ERROR');
+      fetch('https://raw.githubusercontent.com/tag/iu-msis/red-dev/app/data/p1-tasks.json')
+      .then( response =>  response.json() )
+      .then( json => {dashboardApp.tasks = json} )
+      .catch( err => {
+    console.log('TASK FETCH ERROR:');
     console.log(err);
   })
 },
 fetchProject() {
- fetch('https://raw.githubusercontent.com/tag/iu-msis/dev/public/project1.json')
+ fetch('https://raw.githubusercontent.com/tag/iu-msis/dev/app/data/project1.json')
  .then( response => response.json())
  .then( json => {dashboardApp.project = json})
  .catch (err => {
-   console.log('PROJECT FETCH ERROR');
+   console.log('PROJECT FETCH ERROR:');
    console.log(err);
  })
 },
@@ -82,7 +81,7 @@ fetchProject() {
   }
 },
 created() {
-  this.fetchProject();
   this.fetchTasks();
+  this.fetchProject();
 }
 })
