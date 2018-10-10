@@ -39,8 +39,8 @@ public function create() {
   $statement = $db->prepare($sql);
 
   $success = $statement->execute([
-    $this->$task_id
-    $this->$team_id
+    $this->$task_id,
+    $this->$team_id,
     $this->start,
     $this->hours,
     $this->completion_estimate
