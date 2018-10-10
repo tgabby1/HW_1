@@ -58,7 +58,7 @@ methods: {
         return 'alert-warning'
       }
     },
-    fetchTasks() {
+    fetchTasks(pid) {
       fetch('https://raw.githubusercontent.com/tag/iu-msis/red-dev/app/data/p1-tasks.json')
       .then( response =>  response.json() )
       .then( json => {dashboardApp.tasks = json} )
@@ -67,7 +67,7 @@ methods: {
     console.log(err);
   })
 },
-fetchProject() {
+fetchProject(pid) {
  fetch('https://raw.githubusercontent.com/tag/iu-msis/dev/app/data/project1.json')
  .then( response => response.json())
  .then( json => {dashboardApp.project = json})
@@ -76,6 +76,31 @@ fetchProject() {
    console.log(err);
  })
 },
+fetchProjectWork(pid) {
+  fetch('api/workHours.php?projectId=' + pid)
+  .then ( response => response.json())
+  .then (json => {
+    dashboardApp.workHours = json
+    this.formatWorkHours();
+    //this.buildEffortChart();
+  })
+  .catch (err => {
+    console.log('PROJECT HOURS FETCH ERROR:');
+    console.log(err);
+  })
+},
+formatWorkHours() {
+  console.log(this.workHours);
+  this.workHours.forEach(
+    function(entry, index, arr) {
+      entry.date = Date.parse(entry.date);
+      entry.hours = Number(entry.hours);
+      entry.runningTotalHours = entry.hours + (index == 0 ? 0 : arr[index-1].runningTotalHours);
+    }
+  )
+
+  console.log(this.workHours);
+},
   gotoTask(tid) {
     window.location = 'task.html?taskId=' + tid;
   }
@@ -83,5 +108,6 @@ fetchProject() {
 created() {
   this.fetchTasks();
   this.fetchProject();
+  this.fetchProjectWork(1);
 }
 })

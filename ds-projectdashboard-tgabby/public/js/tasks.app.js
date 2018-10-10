@@ -27,7 +27,8 @@ var tasksApp = new Vue({
   },
   methods: {
     handleWorkForm(e) {
-
+      e.preventDefault();
+      
       // TODO: Check validity in a better way
       if (this.workSpan <= 0) {
         console.error('Cannot submit, invalid values');
