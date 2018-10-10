@@ -15,7 +15,7 @@ public static function fetchByProjectId( int $projectId) {
   $statement = $db->prepare($sql);
 
   $success = $statement->execute(
-    [$projectId]
+    [$this->$projectId]
 );
 
 $arr = $statement->fetchAll(PDO::FETCH_ASSOC);
