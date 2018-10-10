@@ -2,16 +2,14 @@
 
 class Work
 {
-  public $work_id;
+  public $id;
   public $task_id;
   public $team_id;
   public $start_date;
   public $stop_date;
   public $hours;
+  public $completion_estimate;
 
-  public function __construct($data) {
-    //TODO
-  }
   public function __construct($row) {
     $this->id = isset($row['id']) ? intval($row['id']) :null ;
 
@@ -78,7 +76,7 @@ public static function findByTaskId(int $taskId) {
 
       array_push($arr,$workItem);
   }
-
+  return $arr;
 }
 
 }
