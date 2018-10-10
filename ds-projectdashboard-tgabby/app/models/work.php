@@ -23,7 +23,7 @@ class Work
     $hours = floor($this->hours);
     $mins = intval(($this->hours - $hours) * 60);
     $interval = 'PT'. ($hours ? $hours.'H' : '') . ($mins ? $mins.'M' : '');
-    
+
     $date = new DateTime($this->start);
     $date = add(new DateInterval($interval));
     $this->stop = $date->fprmat('Y-m-d H:i:s');
@@ -33,10 +33,10 @@ class Work
 
 public function create() {
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-  $sql = 'INSERT INTO Work (task_id, team_id, start_date, hours, completion_estimate)'
-        VALUES(?,?,?,?,?)';'
+  $sql = 'INSERT INTO Work (task_id, team_id, start_date, hours, completion_estimate)
+        VALUES(?,?,?,?,?)';
 
-  $staement = $db->prepare($sql);
+  $statement = $db->prepare($sql);
 
   $success = $statement->execute([
     $this->$task_id
