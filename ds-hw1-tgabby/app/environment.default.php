@@ -1,5 +1,5 @@
-<?php 
+<?php
 
-const DB_USER = 'username';
-const DB_PW = 'hello';
-const DB_NAME = 'hw_db';
+const DB_USER = 'root';
+const DB_PW = '';
+const DB_SERVER = 'mysql:host=localhost;dbname=hw1';
