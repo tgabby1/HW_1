@@ -13,8 +13,8 @@ class Work
   public function __construct($row) {
     $this->id = isset($row['id']) ? intval($row['id']) :null ;
 
-    $this->task_id = intval($row['task_id'])
-    $this->team_id = intval($row['team_id'])
+    $this->task_id = intval($row['task_id']);
+    $this->team_id = intval($row['team_id']);
 
     $this->start_date = $row['start_date'];
     $this->hours = floatval($row['hours']);
