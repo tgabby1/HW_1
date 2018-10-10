@@ -4,7 +4,7 @@
 chdir(__DIR__);
 set_include_path(__DIR__);
 
-require 'environment.php';
+require 'environment.default.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'
 && stripos ($_SERVER['CONTENT_TYPE'], 'application/json') !== false ){
@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'
 }
 
 //Require class files
+
 require 'models/Work.php';
 require 'models/Team.php';
 require 'models/WorkHoursReport';
