@@ -27,8 +27,7 @@ var tasksApp = new Vue({
   },
   methods: {
     handleWorkForm(e) {
-      e.preventDefault();
-      
+
       // TODO: Check validity in a better way
       if (this.workSpan <= 0) {
         console.error('Cannot submit, invalid values');
@@ -70,12 +69,9 @@ var tasksApp = new Vue({
     },
     getEmptyWorkForm() {
       return {
-        start: moment().format('YYYY-MM-DD'),
-        start_time: moment().format('HH:mm'),
-        stop: moment().format('YYYY-MM-DD'),
-        stop_time: moment().format('HH:mm'),
+        start: this.datetimeFormat(),
+        stop: this.datetimeFormat(),
         team_id: null,
-        task_id: this.task.id,
         completion_estimate: 0
       }
     },
@@ -84,7 +80,7 @@ var tasksApp = new Vue({
     }
   },
   created () {
-    console.log(window.location.href);
+
     // Do data fetch
     const url = new URL(window.location.href);
     const taskId = url.searchParams.get('taskId');
