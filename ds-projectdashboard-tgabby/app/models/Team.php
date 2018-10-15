@@ -4,6 +4,7 @@ class Team
 {
   public $id;
   public $name;
+  public $hourly_rate;
 
 public function __construct($data) {
   //TODO
