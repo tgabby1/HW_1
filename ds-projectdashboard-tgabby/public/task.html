@@ -108,7 +108,7 @@
                   <div class="form-group row">
                     <label for="team" class="col-sm-1 col-form-label">Team: </label>
                     <div class="col-sm-6">
-                      <select id="team" v-model="workForm.team" class="form-control" required>
+                      <select id="team" v-model="workForm.team_id" class="form-control" required>
                         <option v-for="t in teamList"
                         :key="tasks.id"
                         :value="tasks.id">{{ tasks.name }}</option>
