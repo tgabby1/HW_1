@@ -27,8 +27,7 @@ var tasksApp = new Vue({
   },
   methods: {
     handleWorkForm(e) {
-      e.preventDefault();
-      
+
       // TODO: Check validity in a better way
       if (this.workSpan <= 0) {
         console.error('Cannot submit, invalid values');
@@ -84,7 +83,7 @@ var tasksApp = new Vue({
     }
   },
   created () {
-    console.log(window.location.href);
+
     // Do data fetch
     const url = new URL(window.location.href);
     const taskId = url.searchParams.get('taskId');
