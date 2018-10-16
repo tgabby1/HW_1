@@ -74,7 +74,7 @@ var tasksApp = new Vue({
         stop: moment().format('YYYY-MM-DD'),
         stop_time: moment().format('HH:mm'),
         team_id: null,
-        task_id:this.task.id,
+        task_id: this.task.id,
         completion_estimate: 0
       }
     },
