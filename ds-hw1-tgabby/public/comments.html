@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+        <!-- Bootstrap CSS (this is how you comment) -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <title>Comments</title>
+        </head>
+
+<body>
+  <main id="commentMain" class="container-fluid">
+    <table id="commentTable" class="table table-striped table-sm table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody id="commentTableBody" v-for="c in commentList"
+        :key="c.id"
+        :id="'-comment-' + c.id">
+            <tr>
+                <td> {{ c.id }}</td>
+                <td> {{ c.comment }} </td>
+            </tr>
+        </tbody>
+    </table>
+
+  <form id="newCommentForm" onsubmit="addrow()">
+  <div class="form-group">
+    <label for="comments">New Comment</label>
+    <textarea class="form-control" id="comment" rows="3"></textarea>
+  </div>
+  <button id="submitNewComment" type="submit" class="btn btn-primary">Submit New Comment</button>
+</form>
+</main>
+<!-- We need Bootstrap's modal JS, thus we also need jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/comment.app.js"></script>
+
+</body>
+</html>

@@ -6,53 +6,50 @@ var commentApp = new Vue({
       comment: ''
     },
     commentForm: { },   // populated by this.getEmptyWorkForm()
+    commentList: [{
+      id: 0,
+      comment: ''
+    }]
   },
   methods: {
     handleCommentForm(e) {
-      e.preventDefault();
 
       // TODO: Check validity
 
-      console.log(e);
-
       //TODO: clone commentForm
-      const s = JSON.stringify(this.commentForm);
+      const s = document.getElementById('comment').value;
+
+      console.log(s);
       //TODO: POST to remote server
       // fetch(url,)
       // .then()
 
       //TODO: Append result
-      this.work.push(JSON.parse(s));
+      //this.work.push(JSON.parse(s));
 
       // Reset workForm
       this.workForm = this.getEmptyCommentForm();
     },
     getEmptyCommentForm() {
       return {
-        id: '',
+        id: 0,
         comment: '',
       }
     },
   },
   created () {
-    // Populate workForm with default values
-    this.commentForm = this.getEmptyCommentForm();
 
     // Do data fetch
     const url = new URL(window.location.href);
-    const commentId = url.searchParams.get('id');
-    console.log('Comment Id: '+ id);
 
-    if (!id) {
-      //TODO: Error? 404?
-      //e.g., window.location = '404.html';
-    }
+    // Populate workForm with default values
+    this.commentForm = this.getEmptyCommentForm();
 
     // TODO: Fetch task-specific data
     // fetch('api/task?id=4')
-    fetch('api/comment.php?id='+id)
+    fetch('api/comment.php?')
     .then( response => response.json() )
-    .then( json => {commentApp.comment = json} )
+    .then( json => {commentApp.commentList = json} )
     .catch( err => {
       console.log('COMMENT FETCH ERROR:');
       console.log(err);

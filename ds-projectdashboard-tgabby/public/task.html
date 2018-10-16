@@ -47,8 +47,8 @@
           </tr>
         </thead>
         <tbody v-for="w in work"
-        :key="work.id"
-        :id="'task-' + task.id + '-work-' + work.id">
+        :key="w.id"
+        :id="'task-' + task.id + '-work-' + w.id">
           <td>{{prettyDate(work.start)}}</td>
           <td>{{prettyDate(work.stop)}}</td>
           <td>{{work.hours}}</td>
@@ -117,7 +117,7 @@
                       <select id="team" v-model="workForm.team_id" class="form-control" required>
                         <option v-for="t in teamList"
                         :key="t.id"
-                        :value="t.id">{{ team.name }}</option>
+                        :value="t.id">{{ t.name }}</option>
                       </select>
                     </div>
                   </div>
