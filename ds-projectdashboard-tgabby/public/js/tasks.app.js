@@ -69,9 +69,12 @@ var tasksApp = new Vue({
     },
     getEmptyWorkForm() {
       return {
-        start: this.datetimeFormat(),
-        stop: this.datetimeFormat(),
+        start: moment().format('YYYY-MM-DD'),
+        start_time: moment().format('HH:mm'),
+        stop: moment().format('YYYY-MM-DD'),
+        stop_time: moment().format('HH:mm'),
         team_id: null,
+        task_id: this.task.id,
         completion_estimate: 0
       }
     },
