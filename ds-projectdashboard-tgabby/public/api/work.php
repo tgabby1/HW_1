@@ -4,6 +4,7 @@ require '../../app/common.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   require 'workPost.php';
+  exit;
 }
 
 //Get the taskId
